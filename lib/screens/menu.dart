@@ -1,3 +1,4 @@
+import 'package:aura_artisan/widgets/left_drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,6 +45,7 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+      drawer: const LeftDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
