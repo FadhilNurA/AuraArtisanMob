@@ -1,3 +1,4 @@
+import 'package:aura_artisan/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:aura_artisan/screens/menu.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         ).copyWith(secondary: Colors.brown[400]),
         useMaterial3: true,
       ),
-      home: MyHomePage(), // Assign MyHomePage to the home property
+      home: const LoginPage(), // Assign MyHomePage to the home property
     );
   }
 }

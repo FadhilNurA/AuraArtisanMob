@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:aura_artisan/widgets/left_drawer.dart';
 
@@ -118,8 +120,17 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
                     backgroundColor: MaterialStateProperty.all(
                         Theme.of(context).colorScheme.primary),
                   ),
-                    onPressed: () {
+                    onPressed: () async{
                       if (_formKey.currentState!.validate()) {
+                        final response = await request.postJson(
+                        "http://localhost:8000/create-flutter/",
+                        jsonEncode(<String, String>{
+                          'Produk': _namaproduk,
+                          'Deskripsi': _deskripsi,
+                          'Harga': _harga.toString(),
+                          // TODO: Sesuaikan field data sesuai dengan aplikasimu
+                        }),
+                      );
                         showDialog(
                           context: context,
                           builder: (context) {
